@@ -48,10 +48,8 @@ def main():
     
     if st.button("Detect Language"):
             predicted_language = predict_language(text_input)
-            # Speak the text
-            speak(text_input)
             write = st.write(f"The Language is {predicted_language}")
-            speak(predict_language)
+            
 
 if __name__ == "__main__":
     main()
