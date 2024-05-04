@@ -3,7 +3,7 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 import re
-import pyttsx3
+
 
 lists = ['Arabic', 'Danish', 'Dutch', 'English', 'French', 'German',
        'Greek', 'Hindi', 'Italian', 'Kannada', 'Malayalam', 'Portugeese',
@@ -22,16 +22,6 @@ with open('nb.pkl', 'rb') as file:
 with open('tfidf_tokenizer.pkl', 'rb') as file:
     tfidf_vectorizer = pickle.load(file)
     
-
-def speak(text):
-    # Initialize the text-to-speech engine
-    engine = pyttsx3.init()
-    # Set properties (optional)
-    engine.setProperty('rate', 150)  # Speed of speech
-    # Convert text to speech
-    engine.say(text)
-    # Wait for speech to finish
-    engine.runAndWait()
 
 
 def predict_language(text):
